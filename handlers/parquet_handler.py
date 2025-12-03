@@ -7,7 +7,7 @@ from typing import List, Dict, Any, Iterator
 from pathlib import Path
 import pyarrow.parquet as pq
 import pyarrow as pa
-
+from configs.config import TEST_DIR
 from .base_handler import BaseFileHandler
 
 
@@ -166,13 +166,13 @@ def main():
 
     print("\n→ Writing test data with different compressions...")
     for comp in compressions:
-        test_file = Path(f"data/test/test_products_{comp or 'none'}.parquet")
+        test_file = Path(f"{TEST_DIR}/test_products_{comp or 'none'}.parquet")
         handler.write(test_data, test_file, compression=comp)
         size_mb = handler.get_file_size_mb(test_file)
         print(f"  ✓ {comp or 'none':10s}: {size_mb:.4f} MB")
 
     # Use snappy for further tests
-    test_file = Path("data/test/test_products_snappy.parquet")
+    test_file = Path(TEST_DIR / "test_products_snappy.parquet")
 
     # Test read
     print("\n→ Reading Parquet...")

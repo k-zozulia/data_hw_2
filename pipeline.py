@@ -11,7 +11,7 @@ from transform.transform import DataNormalizer
 from load.load_postgres import PostgresDataLoader
 from load.load_mongo import MongoDataLoader
 from load.load_redis import RedisCache
-
+from configs.config import DatabaseConfig, RAW_DIR, PROCESSED_DIR
 
 def print_banner(text: str) -> None:
     """Print formatted banner"""
@@ -25,7 +25,7 @@ def run_extract() -> bool:
     print_banner("STEP 1: EXTRACT DATA FROM API")
 
     try:
-        extractor = DataExtractor(data_dir="data/raw")
+        extractor = DataExtractor(data_dir=RAW_DIR)
         data = extractor.extract_from_api(save_to_file=True)
 
         print("\n✅ Extraction complete!")
@@ -45,7 +45,7 @@ def run_transform() -> bool:
     print_banner("STEP 2: TRANSFORM DATA TO 3NF")
 
     try:
-        normalizer = DataNormalizer(data_dir="data/raw", output_dir="data/processed")
+        normalizer = DataNormalizer(data_dir=RAW_DIR, output_dir=PROCESSED_DIR)
 
         tables = normalizer.normalize_all()
 
@@ -65,16 +65,8 @@ def run_load_postgres() -> bool:
     """Step 3: Load data into PostgreSQL (3NF)"""
     print_banner("STEP 3: LOAD DATA INTO POSTGRESQL (3NF)")
 
-    db_config = {
-        "host": "localhost",
-        "database": "dummyjson_db",
-        "user": "etl_user",
-        "password": "etl_password",
-        "port": 5432,
-    }
-
     try:
-        loader = PostgresDataLoader(db_config, data_dir="data/processed")
+        loader = PostgresDataLoader(DatabaseConfig.postgres(), data_dir=PROCESSED_DIR)
 
         loader.connect()
         loader.create_schema()
@@ -105,16 +97,8 @@ def run_load_mongo() -> bool:
     """Step 4: Load data into MongoDB (denormalized)"""
     print_banner("STEP 4: LOAD DATA INTO MONGODB (DENORMALIZED)")
 
-    mongo_config = {
-        "host": "localhost",
-        "port": 27017,
-        "database": "dummyjson_db",
-        "user": "etl_user",
-        "password": "etl_password",
-    }
-
     try:
-        loader = MongoDataLoader(mongo_config, data_dir="data/processed")
+        loader = MongoDataLoader(DatabaseConfig.mongodb(), data_dir=PROCESSED_DIR)
 
         loader.connect()
         loader.drop_collections()
@@ -151,10 +135,8 @@ def run_load_redis() -> bool:
     """Step 5: Cache data in Redis"""
     print_banner("STEP 5: CACHE DATA IN REDIS")
 
-    redis_config = {"host": "localhost", "port": 6379, "db": 0}
-
     try:
-        cache = RedisCache(redis_config, data_dir="data/processed")
+        cache = RedisCache(DatabaseConfig.redis(), data_dir=PROCESSED_DIR)
 
         cache.connect()
         cache.flush_all()
@@ -189,8 +171,8 @@ def main():
     print("╚" + "=" * 78 + "╝")
 
     # Create data directories
-    Path("data/raw").mkdir(parents=True, exist_ok=True)
-    Path("data/processed").mkdir(parents=True, exist_ok=True)
+    Path(RAW_DIR).mkdir(parents=True, exist_ok=True)
+    Path(PROCESSED_DIR).mkdir(parents=True, exist_ok=True)
 
     steps = [
         ("Extract", run_extract),

@@ -7,7 +7,7 @@ import psycopg2
 from decimal import Decimal
 from pathlib import Path
 from typing import List, Dict, Any
-
+from configs.config import DatabaseConfig, EXPORT_DIR
 from handlers.json_handler import JSONHandler
 from handlers.parquet_handler import ParquetHandler
 
@@ -16,7 +16,7 @@ class FactTableExporter:
     """Export fact tables from PostgreSQL to various formats"""
 
     def __init__(
-        self, db_config: Dict[str, str], output_dir: str = "data/exports"
+        self, db_config: Dict[str, str], output_dir: str = EXPORT_DIR
     ):
         self.db_config = db_config
         self.output_dir = Path(output_dir)
@@ -102,15 +102,9 @@ class FactTableExporter:
 def main():
     """Main export function"""
 
-    db_config = {
-        "host": "localhost",
-        "database": "dummyjson_db",
-        "user": "etl_user",
-        "password": "etl_password",
-        "port": 5432,
-    }
+    db_config = DatabaseConfig.postgres()
 
-    exporter = FactTableExporter(db_config, output_dir="data/exports")
+    exporter = FactTableExporter(db_config, output_dir=EXPORT_DIR)
 
     try:
         exporter.connect()

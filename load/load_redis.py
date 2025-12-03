@@ -7,7 +7,7 @@ import json
 import time
 from typing import Any, Dict, List, Optional, Literal
 from pathlib import Path
-
+from configs.config import DatabaseConfig, PROCESSED_DIR
 
 EntityType = Literal["user", "product", "order"]
 
@@ -15,7 +15,7 @@ EntityType = Literal["user", "product", "order"]
 class RedisCache:
     """Cache frequently accessed data in Redis for fast retrieval"""
 
-    def __init__(self, redis_config: Dict[str, Any], data_dir: str = "data/processed"):
+    def __init__(self, redis_config: Dict[str, Any], data_dir: str = PROCESSED_DIR):
         self.redis_config = redis_config
         self.data_dir = Path(data_dir)
         self.client = None
@@ -218,9 +218,7 @@ def main():
     print("REDIS CACHE MODULE - TESTING")
     print("=" * 80)
 
-    redis_config = {"host": "localhost", "port": 6379, "db": 0}
-
-    cache = RedisCache(redis_config, data_dir="data/processed")
+    cache = RedisCache(DatabaseConfig.redis(), data_dir=PROCESSED_DIR)
 
     try:
         cache.connect()

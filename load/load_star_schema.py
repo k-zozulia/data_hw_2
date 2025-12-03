@@ -9,12 +9,12 @@ from typing import List, Dict, Any
 from datetime import datetime, timedelta
 import psycopg2
 from psycopg2.extras import execute_values
-
+from configs.config import DatabaseConfig, PROCESSED_DIR
 
 class StarSchemaLoader:
     """Loads data into Star Schema (Fact + Dimensions)"""
 
-    def __init__(self, db_config: Dict[str, str], data_dir: str = "data/processed"):
+    def __init__(self, db_config: Dict[str, str], data_dir: str = PROCESSED_DIR):
         self.db_config = db_config
         self.data_dir = Path(data_dir)
         self.conn = None
@@ -531,15 +531,7 @@ def main():
     print("STAR SCHEMA LOADER - TESTING")
     print("=" * 80)
 
-    db_config = {
-        "host": "localhost",
-        "database": "dummyjson_db",
-        "user": "etl_user",
-        "password": "etl_password",
-        "port": 5432,
-    }
-
-    loader = StarSchemaLoader(db_config, data_dir="data/processed")
+    loader = StarSchemaLoader(DatabaseConfig.postgres(), data_dir=PROCESSED_DIR)
 
     try:
         loader.connect()

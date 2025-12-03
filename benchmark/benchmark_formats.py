@@ -12,12 +12,13 @@ from handlers.json_handler import JSONHandler
 from handlers.avro_handler import AvroHandler
 from handlers.parquet_handler import ParquetHandler
 from generate.test_data_generator import TestDataGenerator
+from configs.config import TEST_DIR
 
 
 class FormatBenchmark:
     """Compare performance of different file formats"""
 
-    def __init__(self, data_dir: str = "data/test/"):
+    def __init__(self, data_dir: str = TEST_DIR):
         self.data_dir = Path(data_dir)
         self.data_dir.mkdir(parents=True, exist_ok=True)
 
@@ -289,7 +290,6 @@ def main():
 
     benchmark = FormatBenchmark()
 
-    # Run with 10k records
     benchmark.run_all_benchmarks(num_records=10000)
 
     print("\n✅ FILE FORMAT BENCHMARK COMPLETE!")

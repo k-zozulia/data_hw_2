@@ -8,13 +8,14 @@ import time
 from pathlib import Path
 from typing import List, Dict, Any
 from datetime import datetime, timedelta
+from configs.config import PROCESSED_DIR, TEST_DIR
 
 
 class TestDataGenerator:
     """Generate 10,000 test records by duplicating and modifying real data"""
 
     def __init__(
-        self, source_dir: str = "data/processed", output_dir: str = "data/test"
+        self, source_dir: str = PROCESSED_DIR, output_dir: str = TEST_DIR
     ):
         self.source_dir = Path(source_dir)
         self.output_dir = Path(output_dir)

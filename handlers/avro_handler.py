@@ -1,7 +1,7 @@
 from typing import List, Dict, Any, Iterator
 from pathlib import Path
 from fastavro import writer, reader, parse_schema
-
+from configs.config import TEST_DIR
 from .base_handler import BaseFileHandler
 
 
@@ -147,7 +147,7 @@ def main():
 
     # Test write
     print("\n→ Writing test data to Avro...")
-    test_file = Path("data/test/test_products.avro")
+    test_file = Path(TEST_DIR / "test_products.avro")
     handler.write(test_data, test_file, schema)
     print(f"  ✓ Written to {test_file}")
     print(f"  File size: {handler.get_file_size_mb(test_file):.4f} MB")

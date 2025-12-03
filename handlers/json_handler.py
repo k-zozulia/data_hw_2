@@ -5,7 +5,7 @@ JSON Handler - read, write, filter, aggregate JSON files
 import json
 from typing import List, Dict, Any, Iterator
 from pathlib import Path
-
+from configs.config import TEST_DIR
 from .base_handler import BaseFileHandler
 
 
@@ -154,14 +154,14 @@ def main():
 
     # Test write (regular JSON)
     print("\n→ Writing test data to JSON...")
-    test_file = Path("data/test/test_products.json")
+    test_file = Path(TEST_DIR / "test_products.json")
     handler.write(test_data, test_file)
     print(f"  ✓ Written to {test_file}")
     print(f"  File size: {handler.get_file_size_mb(test_file):.4f} MB")
 
     # Test write (JSONL)
     print("\n→ Writing test data to JSONL...")
-    test_jsonl = Path("data/test/test_products.jsonl")
+    test_jsonl = Path(TEST_DIR / "test_products.jsonl")
     handler.write_jsonl(test_data, test_jsonl)
     print(f"  ✓ Written to {test_jsonl}")
 

@@ -8,13 +8,13 @@ import psycopg2
 from psycopg2.extras import execute_values
 from pathlib import Path
 from typing import List, Dict, Any
-
+from configs.config import DatabaseConfig, PROCESSED_DIR
 
 class PostgresDataLoader:
     """Loads normalized data into PostgreSQL"""
 
     def __init__(
-        self, db_config: Dict[str, str], data_dir: str = "data/processed"
+        self, db_config: Dict[str, str], data_dir: str = PROCESSED_DIR
     ) -> None:
         self.db_config = db_config
         self.data_dir = Path(data_dir)
@@ -268,15 +268,7 @@ def main():
     print("ETL LOAD MODULE - TESTING")
     print("=" * 80)
 
-    db_config = {
-        "host": "localhost",
-        "database": "dummyjson_db",
-        "user": "etl_user",
-        "password": "etl_password",
-        "port": 5432,
-    }
-
-    loader = PostgresDataLoader(db_config, data_dir="data/processed")
+    loader = PostgresDataLoader(DatabaseConfig.postgres(), data_dir=PROCESSED_DIR)
 
     try:
         loader.connect()

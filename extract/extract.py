@@ -7,17 +7,18 @@ import requests
 import json
 from pathlib import Path
 from typing import List, Dict, Any
+from configs.config import API_CONFIG, RAW_DIR
 
 
 class DataExtractor:
     """Extract data from various sources"""
 
-    def __init__(self, data_dir: str = "data/raw"):
+    def __init__(self, data_dir: str = RAW_DIR):
         self.data_dir = Path(data_dir)
         self.data_dir.mkdir(parents=True, exist_ok=True)
 
         # API endpoints
-        self.data_source = "https://dummyjson.com"
+        self.data_source = API_CONFIG['base_url']
 
     def extract_from_api(self, save_to_file: bool = True) -> Dict[str, Any]:
         """Extract data from DummyJSON API"""

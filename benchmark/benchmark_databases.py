@@ -13,6 +13,7 @@ from tabulate import tabulate
 import psycopg2
 from pymongo import MongoClient
 import redis
+from configs.config import DatabaseConfig
 
 from generate.test_data_generator import TestDataGenerator
 
@@ -22,23 +23,9 @@ class DatabaseBenchmark:
 
     def __init__(self):
         # Database configurations
-        self.pg_config = {
-            "host": "localhost",
-            "database": "dummyjson_db",
-            "user": "etl_user",
-            "password": "etl_password",
-            "port": 5432,
-        }
-
-        self.mongo_config = {
-            "host": "localhost",
-            "port": 27017,
-            "database": "dummyjson_db",
-            "user": "etl_user",
-            "password": "etl_password",
-        }
-
-        self.redis_config = {"host": "localhost", "port": 6379, "db": 0}
+        self.pg_config = DatabaseConfig.postgres()
+        self.mongo_config = DatabaseConfig.mongodb()
+        self.redis_config = DatabaseConfig.redis()
 
         # Connections
         self.pg_conn = None

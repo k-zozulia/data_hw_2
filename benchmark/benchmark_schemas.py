@@ -4,8 +4,9 @@ Benchmark Script - Compare JOIN performance across 3NF, Star, and Snowflake sche
 
 import time
 import psycopg2
-from typing import Dict, List, Tuple
+from typing import Dict
 from tabulate import tabulate
+from configs.config import DatabaseConfig
 
 
 class SchemaBenchmark:
@@ -463,13 +464,7 @@ class SchemaBenchmark:
 def main():
     """Main benchmark runner"""
 
-    db_config = {
-        "host": "localhost",
-        "database": "dummyjson_db",
-        "user": "etl_user",
-        "password": "etl_password",
-        "port": 5432,
-    }
+    db_config = DatabaseConfig.postgres()
 
     try:
         benchmark = SchemaBenchmark(db_config)

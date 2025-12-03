@@ -8,12 +8,12 @@ from pathlib import Path
 from typing import List, Dict, Any
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
-
+from configs.config import DatabaseConfig, PROCESSED_DIR
 
 class MongoDataLoader:
     """Loads denormalized data into MongoDB"""
 
-    def __init__(self, mongo_config: Dict[str, Any], data_dir: str = "data/processed"):
+    def __init__(self, mongo_config: Dict[str, Any], data_dir: str = PROCESSED_DIR):
         self.mongo_config = mongo_config
         self.data_dir = Path(data_dir)
         self.client = None
@@ -480,15 +480,7 @@ def main():
     print("ETL LOAD MODULE - TESTING")
     print("=" * 80)
 
-    mongo_config = {
-        "host": "localhost",
-        "port": 27017,
-        "database": "dummyjson_db",
-        "user": "etl_user",
-        "password": "etl_password",
-    }
-
-    loader = MongoDataLoader(mongo_config, data_dir="data/processed")
+    loader = MongoDataLoader(DatabaseConfig.mongodb(), data_dir=PROCESSED_DIR)
 
     try:
         loader.connect()

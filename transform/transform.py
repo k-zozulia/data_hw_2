@@ -6,13 +6,14 @@ import json
 from pathlib import Path
 from typing import List, Dict, Any
 from datetime import datetime, timedelta
+from configs.config import RAW_DIR, PROCESSED_DIR
 import random
 
 
 class DataNormalizer:
     """Normalizes DummyJSON data to 3NF"""
 
-    def __init__(self, data_dir: str = "data/raw", output_dir: str = "data/processed"):
+    def __init__(self, data_dir: str = RAW_DIR, output_dir: str = PROCESSED_DIR):
         self.data_dir = Path(data_dir)
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
@@ -398,7 +399,7 @@ class DataNormalizer:
 
 def main():
     """Test normalization"""
-    normalizer = DataNormalizer(output_dir="data/processed", data_dir="data/raw")
+    normalizer = DataNormalizer(output_dir=PROCESSED_DIR, data_dir=RAW_DIR)
     tables = normalizer.normalize_all()
 
     # Print summary
