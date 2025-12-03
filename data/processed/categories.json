@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "beauty",
+    "slug": "beauty"
+  },
+  {
+    "id": 2,
+    "name": "fragrances",
+    "slug": "fragrances"
+  },
+  {
+    "id": 3,
+    "name": "furniture",
+    "slug": "furniture"
+  },
+  {
+    "id": 4,
+    "name": "groceries",
+    "slug": "groceries"
+  },
+  {
+    "id": 5,
+    "name": "home-decoration",
+    "slug": "home-decoration"
+  },
+  {
+    "id": 6,
+    "name": "kitchen-accessories",
+    "slug": "kitchen-accessories"
+  },
+  {
+    "id": 7,
+    "name": "laptops",
+    "slug": "laptops"
+  },
+  {
+    "id": 8,
+    "name": "mens-shirts",
+    "slug": "mens-shirts"
+  },
+  {
+    "id": 9,
+    "name": "mens-shoes",
+    "slug": "mens-shoes"
+  },
+  {
+    "id": 10,
+    "name": "mens-watches",
+    "slug": "mens-watches"
+  },
+  {
+    "id": 11,
+    "name": "mobile-accessories",
+    "slug": "mobile-accessories"
+  },
+  {
+    "id": 12,
+    "name": "motorcycle",
+    "slug": "motorcycle"
+  },
+  {
+    "id": 13,
+    "name": "skin-care",
+    "slug": "skin-care"
+  },
+  {
+    "id": 14,
+    "name": "smartphones",
+    "slug": "smartphones"
+  },
+  {
+    "id": 15,
+    "name": "sports-accessories",
+    "slug": "sports-accessories"
+  },
+  {
+    "id": 16,
+    "name": "sunglasses",
+    "slug": "sunglasses"
+  },
+  {
+    "id": 17,
+    "name": "tablets",
+    "slug": "tablets"
+  },
+  {
+    "id": 18,
+    "name": "tops",
+    "slug": "tops"
+  },
+  {
+    "id": 19,
+    "name": "vehicle",
+    "slug": "vehicle"
+  },
+  {
+    "id": 20,
+    "name": "womens-bags",
+    "slug": "womens-bags"
+  },
+  {
+    "id": 21,
+    "name": "womens-dresses",
+    "slug": "womens-dresses"
+  },
+  {
+    "id": 22,
+    "name": "womens-jewellery",
+    "slug": "womens-jewellery"
+  },
+  {
+    "id": 23,
+    "name": "womens-shoes",
+    "slug": "womens-shoes"
+  },
+  {
+    "id": 24,
+    "name": "womens-watches",
+    "slug": "womens-watches"
+  }
+]

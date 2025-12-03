@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1,
+    "user_id": 33,
+    "total": 103774.85,
+    "order_date": "2025-01-05T21:26:59.708741",
+    "status": "shipped",
+    "discounted_total": 89686.65,
+    "total_products": 4,
+    "total_quantity": 15
+  },
+  {
+    "id": 2,
+    "user_id": 142,
+    "total": 4794.8,
+    "order_date": "2025-10-13T09:35:09.708766",
+    "status": "delivered",
+    "discounted_total": 4288.95,
+    "total_products": 5,
+    "total_quantity": 20
+  },
+  {
+    "id": 3,
+    "user_id": 108,
+    "total": 16775.87,
+    "order_date": "2025-04-06T13:37:36.708776",
+    "status": "completed",
+    "discounted_total": 14144.3,
+    "total_products": 5,
+    "total_quantity": 13
+  },
+  {
+    "id": 4,
+    "user_id": 87,
+    "total": 456.83,
+    "order_date": "2025-04-06T10:05:34.708782",
+    "status": "delivered",
+    "discounted_total": 443.23,
+    "total_products": 4,
+    "total_quantity": 17
+  },
+  {
+    "id": 5,
+    "user_id": 134,
+    "total": 7431.3,
+    "order_date": "2024-12-08T20:31:13.708788",
+    "status": "shipped",
+    "discounted_total": 6676.44,
+    "total_products": 6,
+    "total_quantity": 20
+  },
+  {
+    "id": 6,
+    "user_id": 150,
+    "total": 35199.86,
+    "order_date": "2025-08-18T15:39:55.708794",
+    "status": "delivered",
+    "discounted_total": 31435.05,
+    "total_products": 4,
+    "total_quantity": 14
+  },
+  {
+    "id": 7,
+    "user_id": 86,
+    "total": 145651.89,
+    "order_date": "2025-05-16T11:40:59.708799",
+    "status": "shipped",
+    "discounted_total": 128504.41,
+    "total_products": 3,
+    "total_quantity": 11
+  },
+  {
+    "id": 8,
+    "user_id": 23,
+    "total": 15685.86,
+    "order_date": "2025-05-08T17:08:43.708804",
+    "status": "shipped",
+    "discounted_total": 12666.75,
+    "total_products": 4,
+    "total_quantity": 14
+  },
+  {
+    "id": 9,
+    "user_id": 194,
+    "total": 65529.87,
+    "order_date": "2025-04-19T21:18:18.708809",
+    "status": "shipped",
+    "discounted_total": 63336.57,
+    "total_products": 4,
+    "total_quantity": 13
+  },
+  {
+    "id": 10,
+    "user_id": 160,
+    "total": 29499.92,
+    "order_date": "2025-05-02T11:00:18.708814",
+    "status": "delivered",
+    "discounted_total": 25675.13,
+    "total_products": 2,
+    "total_quantity": 8
+  },
+  {
+    "id": 11,
+    "user_id": 172,
+    "total": 568.36,
+    "order_date": "2025-11-29T21:32:19.708818",
+    "status": "delivered",
+    "discounted_total": 476.76,
+    "total_products": 6,
+    "total_quantity": 14
+  },
+  {
+    "id": 12,
+    "user_id": 202,
+    "total": 931.91,
+    "order_date": "2025-01-26T10:12:11.708824",
+    "status": "shipped",
+    "discounted_total": 798.02,
+    "total_products": 2,
+    "total_quantity": 9
+  },
+  {
+    "id": 13,
+    "user_id": 41,
+    "total": 793.07,
+    "order_date": "2025-09-02T10:43:39.708828",
+    "status": "shipped",
+    "discounted_total": 750.8,
+    "total_products": 5,
+    "total_quantity": 13
+  },
+  {
+    "id": 14,
+    "user_id": 94,
+    "total": 586.82,
+    "order_date": "2025-07-12T21:02:22.708833",
+    "status": "pending",
+    "discounted_total": 500.25,
+    "total_products": 6,
+    "total_quantity": 18
+  },
+  {
+    "id": 15,
+    "user_id": 11,
+    "total": 11741.31,
+    "order_date": "2025-04-04T20:46:19.708839",
+    "status": "pending",
+    "discounted_total": 10940.95,
+    "total_products": 5,
+    "total_quantity": 19
+  },
+  {
+    "id": 16,
+    "user_id": 200,
+    "total": 172.24,
+    "order_date": "2025-11-02T12:02:10.708844",
+    "status": "completed",
+    "discounted_total": 155.84,
+    "total_products": 3,
+    "total_quantity": 6
+  },
+  {
+    "id": 17,
+    "user_id": 141,
+    "total": 192.87,
+    "order_date": "2025-04-19T16:04:39.708849",
+    "status": "completed",
+    "discounted_total": 173.9,
+    "total_products": 4,
+    "total_quantity": 13
+  },
+  {
+    "id": 18,
+    "user_id": 189,
+    "total": 1464.78,
+    "order_date": "2025-01-10T20:07:05.708855",
+    "status": "completed",
+    "discounted_total": 1257.94,
+    "total_products": 6,
+    "total_quantity": 22
+  },
+  {
+    "id": 19,
+    "user_id": 59,
+    "total": 933.87,
+    "order_date": "2025-10-08T20:10:25.708861",
+    "status": "completed",
+    "discounted_total": 794.78,
+    "total_products": 4,
+    "total_quantity": 13
+  },
+  {
+    "id": 20,
+    "user_id": 90,
+    "total": 3534.78,
+    "order_date": "2025-05-06T21:43:28.708866",
+    "status": "pending",
+    "discounted_total": 2936.58,
+    "total_products": 6,
+    "total_quantity": 22
+  },
+  {
+    "id": 21,
+    "user_id": 42,
+    "total": 251.96,
+    "order_date": "2025-02-12T12:41:40.708872",
+    "status": "delivered",
+    "discounted_total": 245.68,
+    "total_products": 2,
+    "total_quantity": 4
+  },
+  {
+    "id": 22,
+    "user_id": 140,
+    "total": 222.88,
+    "order_date": "2025-09-01T20:50:43.708876",
+    "status": "delivered",
+    "discounted_total": 205.63,
+    "total_products": 4,
+    "total_quantity": 12
+  },
+  {
+    "id": 23,
+    "user_id": 147,
+    "total": 7757.8,
+    "order_date": "2025-04-06T20:15:38.708882",
+    "status": "completed",
+    "discounted_total": 7439.98,
+    "total_products": 5,
+    "total_quantity": 20
+  },
+  {
+    "id": 24,
+    "user_id": 6,
+    "total": 1749.9,
+    "order_date": "2025-07-24T13:37:22.708887",
+    "status": "pending",
+    "discounted_total": 1594.33,
+    "total_products": 3,
+    "total_quantity": 10
+  },
+  {
+    "id": 25,
+    "user_id": 118,
+    "total": 412.98,
+    "order_date": "2025-07-12T14:13:02.708891",
+    "status": "completed",
+    "discounted_total": 353.55,
+    "total_products": 2,
+    "total_quantity": 2
+  },
+  {
+    "id": 26,
+    "user_id": 66,
+    "total": 459.92,
+    "order_date": "2025-03-17T12:52:56.708896",
+    "status": "delivered",
+    "discounted_total": 441.17,
+    "total_products": 2,
+    "total_quantity": 8
+  },
+  {
+    "id": 27,
+    "user_id": 75,
+    "total": 190.89,
+    "order_date": "2025-12-01T16:20:41.708900",
+    "status": "pending",
+    "discounted_total": 170.95,
+    "total_products": 4,
+    "total_quantity": 11
+  },
+  {
+    "id": 28,
+    "user_id": 147,
+    "total": 209.91,
+    "order_date": "2025-08-14T11:16:24.708907",
+    "status": "pending",
+    "discounted_total": 186.09,
+    "total_products": 2,
+    "total_quantity": 9
+  },
+  {
+    "id": 29,
+    "user_id": 170,
+    "total": 3862.43,
+    "order_date": "2025-10-08T10:53:48.708913",
+    "status": "shipped",
+    "discounted_total": 3488.44,
+    "total_products": 5,
+    "total_quantity": 17
+  },
+  {
+    "id": 30,
+    "user_id": 177,
+    "total": 128249.07,
+    "order_date": "2025-01-22T16:42:39.708919",
+    "status": "shipped",
+    "discounted_total": 118740.76,
+    "total_products": 4,
+    "total_quantity": 13
+  },
+  {
+    "id": 31,
+    "user_id": 143,
+    "total": 4749.87,
+    "order_date": "2025-09-04T17:00:31.708924",
+    "status": "shipped",
+    "discounted_total": 4454.75,
+    "total_products": 4,
+    "total_quantity": 13
+  },
+  {
+    "id": 32,
+    "user_id": 164,
+    "total": 65519.87,
+    "order_date": "2025-04-14T15:09:36.708928",
+    "status": "pending",
+    "discounted_total": 58436.16,
+    "total_products": 4,
+    "total_quantity": 13
+  },
+  {
+    "id": 33,
+    "user_id": 181,
+    "total": 229.93,
+    "order_date": "2025-06-15T21:11:42.708933",
+    "status": "completed",
+    "discounted_total": 210.56,
+    "total_products": 2,
+    "total_quantity": 7
+  },
+  {
+    "id": 34,
+    "user_id": 203,
+    "total": 830.83,
+    "order_date": "2025-11-06T17:21:24.708937",
+    "status": "completed",
+    "discounted_total": 766.56,
+    "total_products": 4,
+    "total_quantity": 17
+  },
+  {
+    "id": 35,
+    "user_id": 153,
+    "total": 417.87,
+    "order_date": "2025-08-24T11:17:05.708944",
+    "status": "pending",
+    "discounted_total": 373.69,
+    "total_products": 4,
+    "total_quantity": 13
+  },
+  {
+    "id": 36,
+    "user_id": 176,
+    "total": 1875.89,
+    "order_date": "2025-06-20T10:31:16.708948",
+    "status": "completed",
+    "discounted_total": 1728.16,
+    "total_products": 3,
+    "total_quantity": 11
+  },
+  {
+    "id": 37,
+    "user_id": 33,
+    "total": 160289.86,
+    "order_date": "2025-08-20T14:56:13.708953",
+    "status": "pending",
+    "discounted_total": 148416.41,
+    "total_products": 4,
+    "total_quantity": 14
+  },
+  {
+    "id": 38,
+    "user_id": 15,
+    "total": 3359.79,
+    "order_date": "2025-11-16T18:18:53.708957",
+    "status": "completed",
+    "discounted_total": 3262.64,
+    "total_products": 6,
+    "total_quantity": 21
+  },
+  {
+    "id": 39,
+    "user_id": 81,
+    "total": 44376.84,
+    "order_date": "2025-02-13T10:21:41.708963",
+    "status": "shipped",
+    "discounted_total": 39690.05,
+    "total_products": 6,
+    "total_quantity": 16
+  },
+  {
+    "id": 40,
+    "user_id": 187,
+    "total": 98499.82,
+    "order_date": "2025-08-26T20:20:49.708968",
+    "status": "pending",
+    "discounted_total": 91112.07,
+    "total_products": 6,
+    "total_quantity": 18
+  },
+  {
+    "id": 41,
+    "user_id": 184,
+    "total": 944,
+    "order_date": "2025-02-06T11:39:40.708974",
+    "status": "delivered",
+    "discounted_total": 879.45,
+    "total_products": 6,
+    "total_quantity": 20
+  },
+  {
+    "id": 42,
+    "user_id": 67,
+    "total": 12059.93,
+    "order_date": "2025-05-06T20:24:20.708979",
+    "status": "delivered",
+    "discounted_total": 10063.74,
+    "total_products": 2,
+    "total_quantity": 7
+  },
+  {
+    "id": 43,
+    "user_id": 35,
+    "total": 179.96,
+    "order_date": "2024-12-03T09:10:10.708983",
+    "status": "pending",
+    "discounted_total": 160.56,
+    "total_products": 2,
+    "total_quantity": 4
+  },
+  {
+    "id": 44,
+    "user_id": 20,
+    "total": 460.87,
+    "order_date": "2024-12-16T11:49:43.708988",
+    "status": "completed",
+    "discounted_total": 413.86,
+    "total_products": 4,
+    "total_quantity": 13
+  },
+  {
+    "id": 45,
+    "user_id": 50,
+    "total": 260.89,
+    "order_date": "2025-01-26T14:38:57.708993",
+    "status": "completed",
+    "discounted_total": 228.44,
+    "total_products": 3,
+    "total_quantity": 11
+  },
+  {
+    "id": 46,
+    "user_id": 93,
+    "total": 3603.97,
+    "order_date": "2025-06-17T17:45:06.708998",
+    "status": "shipped",
+    "discounted_total": 2984.13,
+    "total_products": 2,
+    "total_quantity": 3
+  },
+  {
+    "id": 47,
+    "user_id": 23,
+    "total": 457.86,
+    "order_date": "2025-06-10T10:32:41.709002",
+    "status": "delivered",
+    "discounted_total": 407.1,
+    "total_products": 5,
+    "total_quantity": 14
+  },
+  {
+    "id": 48,
+    "user_id": 33,
+    "total": 10007.96,
+    "order_date": "2025-10-11T19:35:30.709007",
+    "status": "shipped",
+    "discounted_total": 8773.59,
+    "total_products": 2,
+    "total_quantity": 4
+  },
+  {
+    "id": 49,
+    "user_id": 86,
+    "total": 7016.77,
+    "order_date": "2024-12-30T21:59:38.709011",
+    "status": "delivered",
+    "discounted_total": 6157.46,
+    "total_products": 6,
+    "total_quantity": 23
+  },
+  {
+    "id": 50,
+    "user_id": 52,
+    "total": 36.28,
+    "order_date": "2025-07-24T17:13:09.709018",
+    "status": "shipped",
+    "discounted_total": 34.97,
+    "total_products": 2,
+    "total_quantity": 2
+  }
+]

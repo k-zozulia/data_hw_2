@@ -1,0 +1,4 @@
+{"id": 1, "name": "Product A", "price": 100.5, "stock": 50, "tags": ["electronics", "popular"]}
+{"id": 2, "name": "Product B", "price": 200.75, "stock": 30, "tags": ["electronics"]}
+{"id": 3, "name": "Product C", "price": 50.25, "stock": 100, "tags": ["home", "cheap"]}
+{"id": 4, "name": "Product D", "price": 150.0, "stock": 20, "tags": ["popular"]}

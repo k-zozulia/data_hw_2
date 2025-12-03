@@ -1,0 +1,278 @@
+
+
+╔==============================================================================╗
+║                         ETL PIPELINE - FULL RUN                              ║
+╚==============================================================================╝
+
+================================================================================
+  STEP 1: EXTRACT DATA FROM API
+================================================================================
+Extracting data from DummyJSON API...
+ ✓ Extracted 194 products
+ ✓ Extracted 208 users
+ ✓ Extracted 50 carts
+
+Saving API data to files...
+ ✓ Saved /Users/karina_zozulia/PycharmProjects/data_hw_2/data/raw/products.json
+ ✓ Saved /Users/karina_zozulia/PycharmProjects/data_hw_2/data/raw/users.json
+ ✓ Saved /Users/karina_zozulia/PycharmProjects/data_hw_2/data/raw/carts.json
+
+ ✓ Saved 194 products to CSV
+
+ ✓ Saved 208 users to CSV
+
+✅ Extraction complete!
+  • Products: 194
+  • Users: 208
+  • Carts: 50
+
+================================================================================
+  STEP 2: TRANSFORM DATA TO 3NF
+================================================================================
+Normalizing all data...
+
+→ Normalizing users...
+  ✓ Users: 208
+  ✓ Addresses: 416
+  ✓ Banks: 208
+  ✓ Companies: 208
+
+→ Normalizing products...
+  ✓ Products: 194
+  ✓ Categories: 24
+  ✓ Product tags: 364
+  ✓ Product images: 474
+  ✓ Reviews: 582
+
+→ Normalizing carts to orders...
+  ✓ Orders: 50
+  ✓ Order items: 198
+
+→ Saving normalized data...
+  ✓ /Users/karina_zozulia/PycharmProjects/data_hw_2/data/processed/addresses.json (416 records)
+  ✓ /Users/karina_zozulia/PycharmProjects/data_hw_2/data/processed/banks.json (208 records)
+  ✓ /Users/karina_zozulia/PycharmProjects/data_hw_2/data/processed/companies.json (208 records)
+  ✓ /Users/karina_zozulia/PycharmProjects/data_hw_2/data/processed/categories.json (24 records)
+  ✓ /Users/karina_zozulia/PycharmProjects/data_hw_2/data/processed/users.json (208 records)
+  ✓ /Users/karina_zozulia/PycharmProjects/data_hw_2/data/processed/products.json (194 records)
+  ✓ /Users/karina_zozulia/PycharmProjects/data_hw_2/data/processed/product_tags.json (364 records)
+  ✓ /Users/karina_zozulia/PycharmProjects/data_hw_2/data/processed/product_images.json (474 records)
+  ✓ /Users/karina_zozulia/PycharmProjects/data_hw_2/data/processed/reviews.json (582 records)
+  ✓ /Users/karina_zozulia/PycharmProjects/data_hw_2/data/processed/orders.json (50 records)
+  ✓ /Users/karina_zozulia/PycharmProjects/data_hw_2/data/processed/order_items.json (198 records)
+ Normalization complete
+
+✅ Transformation complete!
+
+Normalized tables:
+  • addresses           :   416 records
+  • banks               :   208 records
+  • companies           :   208 records
+  • categories          :    24 records
+  • users               :   208 records
+  • products            :   194 records
+  • product_tags        :   364 records
+  • product_images      :   474 records
+  • reviews             :   582 records
+  • orders              :    50 records
+  • order_items         :   198 records
+
+================================================================================
+  STEP 3: LOAD DATA INTO POSTGRESQL (3NF)
+================================================================================
+✓ Connected to PostgreSQL
+
+→ Creating sql schema...
+  ✓ SQL schema created successfully!
+
+→ Loading data...
+Load all data...
+
+→ Loading addresses...
+  ✓ 416 records in 0.010s (batch)
+
+→ Loading banks...
+  ✓ 208 records in 0.003s (batch)
+
+→ Loading categories...
+  ✓ 24 records in 0.001s (batch)
+
+→ Loading companies...
+  ✓ 208 records in 0.004s (batch)
+
+→ Loading users...
+  ✓ 208 records in 0.017s (batch)
+
+→ Loading products...
+  ✓ 194 records in 0.010s (batch)
+
+→ Loading product_tags...
+  ✓ 364 records in 0.005s (batch)
+
+→ Loading product_images...
+  ✓ 474 records in 0.007s (batch)
+
+→ Loading reviews...
+  ✓ 582 records in 0.011s (batch)
+
+→ Loading orders...
+  ✓ 50 records in 0.002s (batch)
+
+→ Loading order_items...
+  ✓ 198 records in 0.005s (batch)
+
+→ Database statistics:
+Database statistics...
+  • addresses           :    416 records
+  • banks               :    208 records
+  • companies           :    208 records
+  • categories          :     24 records
+  • users               :    208 records
+  • products            :    194 records
+  • product_tags        :    364 records
+  • product_images      :    474 records
+  • reviews             :    582 records
+  • orders              :     50 records
+  • order_items         :    198 records
+
+ Loading times:
+  • addresses           :    416 records in  0.010s (batch)
+  • banks               :    208 records in  0.003s (batch)
+  • categories          :     24 records in  0.001s (batch)
+  • companies           :    208 records in  0.004s (batch)
+  • users               :    208 records in  0.017s (batch)
+  • products            :    194 records in  0.010s (batch)
+  • product_tags        :    364 records in  0.005s (batch)
+  • product_images      :    474 records in  0.007s (batch)
+  • reviews             :    582 records in  0.011s (batch)
+  • orders              :     50 records in  0.002s (batch)
+  • order_items         :    198 records in  0.005s (batch)
+✓ Connection closed
+
+✅ PostgreSQL load complete!
+
+================================================================================
+  STEP 4: LOAD DATA INTO MONGODB (DENORMALIZED)
+================================================================================
+✓ Connected to MongoDB
+
+→ Dropping old collections...
+  ✓ users dropped
+  ✓ products dropped
+  ✓ orders dropped
+
+→ Loading normalized data from JSON...
+    ✓ addresses: 416 records
+    ✓ banks: 208 records
+    ✓ companies: 208 records
+    ✓ categories: 24 records
+    ✓ users: 208 records
+    ✓ products: 194 records
+    ✓ product_tags: 364 records
+    ✓ product_images: 474 records
+    ✓ reviews: 582 records
+    ✓ orders: 50 records
+    ✓ order_items: 198 records
+
+→ Creating denormalized documents...
+
+  • Denormalizing users...
+    ✓ Created 208 user documents
+  • Denormalizing products...
+    ✓ Created 194 product documents
+  • Denormalizing orders...
+    ✓ Created 50 order documents
+
+→ Loading denormalized data into MongoDB...
+
+→ Loading users...
+  ✓ Inserted 208 documents in 0.014s
+
+→ Loading products...
+  ✓ Inserted 194 documents in 0.007s
+
+→ Loading orders...
+  ✓ Inserted 50 documents in 0.005s
+
+→ Creating indexes...
+
+→ Indexes for users...
+  ✓ email, username
+→ Indexes for products...
+  ✓ category.slug, brand, price, rating
+→ Indexes for orders...
+  ✓ user.id
+
+ Indexes created!
+
+→ MongoDB stats
+  • users          :    208 documents (0.29 MB)
+  • products       :    194 documents (0.32 MB)
+  • orders         :     50 documents (0.07 MB)
+
+ Loading times:
+  • users          :    208 documents in  0.014s
+  • products       :    194 documents in  0.007s
+  • orders         :     50 documents in  0.005s
+  • TOTAL          :    452 documents in  0.026s
+✓ MongoDB connection closed
+
+✅ MongoDB load complete!
+
+================================================================================
+  STEP 5: CACHE DATA IN REDIS
+================================================================================
+✓ Connected to Redis
+✓ Redis database flushed
+
+→ Loading data from files to Redis...
+Loading denormalized data from MongpDB to Redis
+
+→ Caching users to Redis (batch mode)...
+  ✓ Cached 208/208 users in 0.006s (batch)
+
+→ Caching products to Redis (batch mode)...
+  ✓ Cached 194/194 products in 0.003s (batch)
+
+→ Caching orders to Redis (batch mode)...
+  ✓ Cached 50/50 orders in 0.001s (batch)
+Redis cache statistics:
+  • Total keys:       452
+  • Memory used:      1.78 MB
+  • Users cached:     208
+  • Products cached:  194
+  • Orders cached:     50
+  • Uptime:           540200s
+================================================================================
+
+ Caching times:
+  • user           :    208 records in  0.006s
+  • product        :    194 records in  0.003s
+  • order          :     50 records in  0.001s
+✓ Redis connection closed
+
+✅ Redis cache complete!
+
+================================================================================
+  ETL PIPELINE COMPLETE
+================================================================================
+
+✅ All steps completed successfully!
+
+Steps executed:
+  1. ✅ Extract
+  2. ✅ Transform
+  3. ✅ Load PostgreSQL
+  4. ✅ Load MongoDB
+  5. ✅ Cache Redis
+
+================================================================================
+
+ ETL Pipeline finished! Data is ready in:
+  • PostgreSQL: dummyjson_db (normalized, 3NF)
+  • MongoDB: dummyjson_db (denormalized documents)
+  • Redis: cached frequently accessed data
+
+Run benchmark.py to compare performance!
+================================================================================
+
