@@ -225,7 +225,7 @@ Exports fact tables to Parquet and JSON formats.
 ## 📁 Project Structure
 
 ```
-etl-project/
+multistore-etl/
 ├── README.md                     # This file
 ├── RESULTS.md                    # Benchmark results & conclusions
 ├── requirements.txt              # Python dependencies
