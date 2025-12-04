@@ -10,6 +10,7 @@ from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
 from configs.config import DatabaseConfig, PROCESSED_DIR
 
+
 class MongoDataLoader:
     """Loads denormalized data into MongoDB"""
 

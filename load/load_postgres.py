@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import List, Dict, Any
 from configs.config import DatabaseConfig, PROCESSED_DIR
 
+
 class PostgresDataLoader:
     """Loads normalized data into PostgreSQL"""
 

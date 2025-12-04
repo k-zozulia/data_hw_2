@@ -14,9 +14,7 @@ from configs.config import PROCESSED_DIR, TEST_DIR
 class TestDataGenerator:
     """Generate 10,000 test records by duplicating and modifying real data"""
 
-    def __init__(
-        self, source_dir: str = PROCESSED_DIR, output_dir: str = TEST_DIR
-    ):
+    def __init__(self, source_dir: str = PROCESSED_DIR, output_dir: str = TEST_DIR):
         self.source_dir = Path(source_dir)
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)

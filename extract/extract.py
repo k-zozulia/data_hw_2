@@ -18,7 +18,7 @@ class DataExtractor:
         self.data_dir.mkdir(parents=True, exist_ok=True)
 
         # API endpoints
-        self.data_source = API_CONFIG['base_url']
+        self.data_source = API_CONFIG["base_url"]
 
     def extract_from_api(self, save_to_file: bool = True) -> Dict[str, Any]:
         """Extract data from DummyJSON API"""

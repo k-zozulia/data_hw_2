@@ -116,12 +116,14 @@ class SchemaBenchmark:
         time_star = self.execute_query(query_star)
         time_snowflake = self.execute_query(query_snowflake)
 
-        self.results.append({
-            "query": "Revenue by Product",
-            "3nf": time_3nf,
-            "star": time_star,
-            "snowflake": time_snowflake
-        })
+        self.results.append(
+            {
+                "query": "Revenue by Product",
+                "3nf": time_3nf,
+                "star": time_star,
+                "snowflake": time_snowflake,
+            }
+        )
 
         print(f"  3NF:       {time_3nf:.4f}s")
         print(f"  Star:      {time_star:.4f}s")
@@ -180,12 +182,14 @@ class SchemaBenchmark:
         time_star = self.execute_query(query_star)
         time_snowflake = self.execute_query(query_snowflake)
 
-        self.results.append({
-            "query": "Top Users",
-            "3nf": time_3nf,
-            "star": time_star,
-            "snowflake": time_snowflake
-        })
+        self.results.append(
+            {
+                "query": "Top Users",
+                "3nf": time_3nf,
+                "star": time_star,
+                "snowflake": time_snowflake,
+            }
+        )
 
         print(f"  3NF:       {time_3nf:.4f}s")
         print(f"  Star:      {time_star:.4f}s")
@@ -238,17 +242,18 @@ class SchemaBenchmark:
         time_star = self.execute_query(query_star)
         time_snowflake = self.execute_query(query_snowflake)
 
-        self.results.append({
-            "query": "Monthly Revenue",
-            "3nf": time_3nf,
-            "star": time_star,
-            "snowflake": time_snowflake
-        })
+        self.results.append(
+            {
+                "query": "Monthly Revenue",
+                "3nf": time_3nf,
+                "star": time_star,
+                "snowflake": time_snowflake,
+            }
+        )
 
         print(f"  3NF:       {time_3nf:.4f}s")
         print(f"  Star:      {time_star:.4f}s")
         print(f"  Snowflake: {time_snowflake:.4f}s")
-
 
     def benchmark_complex_join(self) -> None:
         """Benchmark: Complex multi-table JOIN"""
@@ -317,12 +322,14 @@ class SchemaBenchmark:
         time_star = self.execute_query(query_star)
         time_snowflake = self.execute_query(query_snowflake)
 
-        self.results.append({
-            "query": "Complex Multi-Table JOIN",
-            "3nf": time_3nf,
-            "star": time_star,
-            "snowflake": time_snowflake
-        })
+        self.results.append(
+            {
+                "query": "Complex Multi-Table JOIN",
+                "3nf": time_3nf,
+                "star": time_star,
+                "snowflake": time_snowflake,
+            }
+        )
 
         print(f"  3NF:       {time_3nf:.4f}s")
         print(f"  Star:      {time_star:.4f}s")
@@ -383,12 +390,14 @@ class SchemaBenchmark:
         time_star = self.execute_query(query_star)
         time_snowflake = self.execute_query(query_snowflake)
 
-        self.results.append({
-            "query": "Heavy Aggregations",
-            "3nf": time_3nf,
-            "star": time_star,
-            "snowflake": time_snowflake
-        })
+        self.results.append(
+            {
+                "query": "Heavy Aggregations",
+                "3nf": time_3nf,
+                "star": time_star,
+                "snowflake": time_snowflake,
+            }
+        )
 
         print(f"  3NF:       {time_3nf:.4f}s")
         print(f"  Star:      {time_star:.4f}s")
@@ -406,16 +415,20 @@ class SchemaBenchmark:
             times = [result["3nf"], result["star"], result["snowflake"]]
             min_time = min(times)
 
-            table_data.append([
-                result["query"],
-                f"{result['3nf']:.4f}s",
-                f"{result['star']:.4f}s",
-                f"{result['snowflake']:.4f}s",
-            ])
+            table_data.append(
+                [
+                    result["query"],
+                    f"{result['3nf']:.4f}s",
+                    f"{result['star']:.4f}s",
+                    f"{result['snowflake']:.4f}s",
+                ]
+            )
 
         headers = [
             "Query",
-            "3NF Time", "Star Time", "Snowflake Time",
+            "3NF Time",
+            "Star Time",
+            "Snowflake Time",
         ]
 
         print("\n" + tabulate(table_data, headers=headers, tablefmt="grid"))

@@ -102,34 +102,49 @@ pip install -r requirements.txt
 
 ### 3. Start Database Services
 
-#### Option A: Using Docker (Recommended)
+### Option A: Using Docker (Recommended)
 
 ```bash
+# 1. Clone repository
+git clone https://github.com/k-zozulia/data_hw_2.git
+cd data_hw_2
+
+# 2. Install Python dependencies
+pip install -r requirements.txt
+
+# 3. Start database services
 docker-compose up -d
+
+# 4. Wait for services to be healthy (~30 seconds)
+docker-compose ps
+
+# 5. Run ETL pipeline
+python pipeline.py
+
+# 6. Run benchmarks
+python benchmark/benchmark_databases.py
+python benchmark/benchmark_formats.py
+python benchmark/benchmark_schemas.py
+
+# 7. Validate data
+python validate/data_validator.py
 ```
 
-This starts:
-- PostgreSQL on port `5432`
-- MongoDB on port `27017`
-- Redis on port `6379`
-- pgAdmin on port `5050` (admin@example.com / etl_password)
-- Redis Commander on port `8081`
-
-#### Option B: Manual Setup
-
-Install and configure PostgreSQL, MongoDB, and Redis manually, then update `configs/config.py` with your connection details.
-
-### 4. Verify Services
+### Option B: Manual Setup
 
 ```bash
-# Check Docker containers
-docker ps
+# 1. Install databases manually
+# - PostgreSQL 15+
+# - MongoDB 7.0+
+# - Redis 7.0+
 
-# Or verify individual services
-psql -h localhost -U etl_user -d dummyjson_db
-mongosh -u etl_user -p etl_password localhost:27017
-redis-cli ping
+# 2. Update configs/config.py with your connection details
+
+# 3. Follow steps 2, 5-7 from Option A
 ```
+
+---
+
 
 ## 💻 Usage
 
@@ -191,6 +206,14 @@ python generate/test_data_generator.py
 Generates 10,000 test records for performance testing.
 
 
+### Data Validation
+
+```bash
+python validate/data_validator.py
+```
+Validate data in files and Postgres db.
+
+
 ### Export Fact Tables
 
 ```bash
@@ -211,6 +234,9 @@ etl-project/
 │
 ├── configs/
 │   └── config.py                 # Database & API configuration
+│
+├── utils/
+│   └── logger.py                 # Centralized logging
 │
 ├── extract/
 │   └── extract.py                # Data extraction from API
@@ -236,6 +262,9 @@ etl-project/
 │   ├── benchmark_databases.py    # DB insert/read comparison
 │   ├── benchmark_formats.py      # File format comparison
 │   └── benchmark_schemas.py      # Schema query performance
+│
+├── validate/
+│   └── data_validator.py         # Data validation & integrity
 │
 ├── export/
 │   └── export_fact_tables.py     # Export fact tables

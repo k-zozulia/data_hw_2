@@ -14,8 +14,17 @@ TEST_DIR = DATA_DIR / "test"
 EXPORT_DIR = DATA_DIR / "exports"
 RESULTS_DIR = BASE_DIR / "results"
 SQL_DIR = BASE_DIR / "sql"
+LOGS_DIR = RESULTS_DIR / "logs"
 
-for directory in [DATA_DIR, RAW_DIR, PROCESSED_DIR, TEST_DIR, EXPORT_DIR, RESULTS_DIR]:
+for directory in [
+    DATA_DIR,
+    RAW_DIR,
+    PROCESSED_DIR,
+    TEST_DIR,
+    EXPORT_DIR,
+    RESULTS_DIR,
+    LOGS_DIR,
+]:
     directory.mkdir(parents=True, exist_ok=True)
 
 

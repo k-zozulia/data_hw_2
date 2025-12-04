@@ -15,9 +15,7 @@ from handlers.parquet_handler import ParquetHandler
 class FactTableExporter:
     """Export fact tables from PostgreSQL to various formats"""
 
-    def __init__(
-        self, db_config: Dict[str, str], output_dir: str = EXPORT_DIR
-    ):
+    def __init__(self, db_config: Dict[str, str], output_dir: str = EXPORT_DIR):
         self.db_config = db_config
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
@@ -68,7 +66,7 @@ class FactTableExporter:
                 value = row[i]
 
                 # Convert date/datetime
-                if hasattr(value, 'isoformat'):
+                if hasattr(value, "isoformat"):
                     value = value.isoformat()
 
                 # Convert Decimal
@@ -96,8 +94,9 @@ class FactTableExporter:
         json_size = self.json_handler.get_file_size_mb(json_file)
 
         parquet_file = self.output_dir / "star_fact_orders.parquet"
-        self.parquet_handler.write(data, parquet_file, compression='snappy')
+        self.parquet_handler.write(data, parquet_file, compression="snappy")
         parquet_size = self.parquet_handler.get_file_size_mb(parquet_file)
+
 
 def main():
     """Main export function"""

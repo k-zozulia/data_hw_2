@@ -11,6 +11,7 @@ import psycopg2
 from psycopg2.extras import execute_values
 from configs.config import DatabaseConfig, PROCESSED_DIR
 
+
 class SnowflakeSchemaLoader:
     """Loads data into Snowflake Schema (normalized dimensional model)"""
 

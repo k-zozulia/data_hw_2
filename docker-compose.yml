@@ -5,9 +5,9 @@ services:
     image: postgres:15-alpine
     container_name: dummyjson_postgres
     environment:
-      POSTGRES_USER: etl_user
-      POSTGRES_PASSWORD: etl_password
-      POSTGRES_DB: dummyjson_db
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     ports:
       - "5432:5432"
     volumes:
@@ -22,9 +22,9 @@ services:
     image: mongo:7.0
     container_name: dummyjson_mongodb
     environment:
-      MONGO_INITDB_ROOT_USERNAME: etl_user
-      MONGO_INITDB_ROOT_PASSWORD: etl_password
-      MONGO_INITDB_DATABASE: dummyjson_db
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_DB}
     ports:
       - "27017:27017"
     volumes:
@@ -54,8 +54,8 @@ services:
     container_name: etl_pgadmin
     restart: always
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@example.com
-      PGADMIN_DEFAULT_PASSWORD: etl_password
+      PGADMIN_DEFAULT_EMAIL: ${PG_ADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PG_ADMIN_PASSWORD}
     ports:
       - "5050:80"
     depends_on:

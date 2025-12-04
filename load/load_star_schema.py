@@ -11,6 +11,7 @@ import psycopg2
 from psycopg2.extras import execute_values
 from configs.config import DatabaseConfig, PROCESSED_DIR
 
+
 class StarSchemaLoader:
     """Loads data into Star Schema (Fact + Dimensions)"""
 
