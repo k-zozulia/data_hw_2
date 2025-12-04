@@ -87,26 +87,11 @@ The project includes comprehensive benchmarks comparing:
 
 ## 🚀 Installation
 
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/k-zozulia/data_hw_2.git
-cd data_hw_2
-```
-
-### 2. Install Python Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Start Database Services
-
 ### Option A: Using Docker (Recommended)
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/k-zozulia/data_hw_2.git
+git clone https://github.com/k-zozulia/multistore-etl.git
 cd data_hw_2
 
 # 2. Install Python dependencies
