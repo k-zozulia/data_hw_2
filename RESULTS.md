@@ -7,7 +7,7 @@
 - **Records Retrieved**:
   - Products: 194
   - Users: 208
-  - Carts/Orders: 20
+  - Carts/Orders: 50
 
 ### 1.2 Transform (3NF Normalization)
 **Normalized Tables**:
